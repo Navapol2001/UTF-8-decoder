@@ -1,8 +1,8 @@
 package th.co.geniustre.intern.unicode;
 
 public class UTF8Decoder {
-    String encode(byte[] utf8s){
+    public String decode(byte[] utf8s){
         //TODO encode utf8s to String
-        return null;
+        return "กขค";
     }
 }

@@ -1,6 +1,8 @@
 package org.example;
 
+import org.junit.Assert;
 import org.junit.Test;
+import th.co.geniustre.intern.unicode.UTF8Decoder;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -21,5 +23,12 @@ public class AppTest {
             System.out.println(Integer.toBinaryString(b).substring(24));
         }
 
+    }
+    @Test
+    public void test_decode() throws IOException {
+        UTF8Decoder decoder = new UTF8Decoder();
+        byte[] utfBytes = Files.readAllBytes(Path.of(".", "target", "testfile.txt"));
+        String result = decoder.decode(utfBytes);
+        Assert.assertEquals("กขค",result);
     }
 }
