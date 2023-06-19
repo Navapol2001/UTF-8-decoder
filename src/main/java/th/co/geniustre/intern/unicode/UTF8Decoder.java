@@ -19,6 +19,7 @@ public class UTF8Decoder extends Unicode {
             binaryList.add(binaryPerByte);
         }
 
+
         //UTF-8 algorithm to decode byte to code point in decimal
         List<String> decodePart = new ArrayList<>(); //record last 4 or 6 bits of each byte
         for (String binary : binaryList) {
@@ -46,7 +47,7 @@ public class UTF8Decoder extends Unicode {
             System.out.println(decoder.getChar(valueOfCodePoint) + " code point: " + valueOfCodePoint);
             alphabets.append(decoder.getChar(valueOfCodePoint));
         }
-
+        System.out.println("UTF-8: " + alphabets);
         return alphabets.toString();
 
     }
